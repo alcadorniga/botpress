@@ -1,0 +1,22 @@
+{
+  "name": "sample-bot",
+  "version": "0.0.1",
+  "description": "sample bot",
+  "main": "index.js",
+  "dependencies": {
+    "bot": "0.0.3",
+    "botbuilder-quickreplies": "^1.1.1",
+    "botpress": "1.x",
+    "botpress-messenger": "^2.2.9",
+    "botpress-web": "1.x",
+    "builder": "^3.2.3",
+    "csv": "^2.0.0",
+    "sqlite3": "^3.1.13"
+  },
+  "scripts": {
+    "start": "botpress start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ali",
+  "license": "Botpress Proprietary License"
+}

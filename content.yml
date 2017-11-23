@@ -1,0 +1,74 @@
+welcome:
+  - typing: true
+    text:
+      - Hello!
+      - Hi!
+  - text: What is your name?
+    typing: 2s
+
+goodbye:
+  - text: You are leaving because you said {{reason}}
+    typing: true
+  - Hope to see you back again soon!
+
+greet:
+  - typing: 2s
+    text: Hello, {{name}}!
+  - typing: 2s
+    text: May I know your address?
+
+name:
+  - typing: true
+    text: What is your name?
+
+address:
+  - typing: true
+    text: Let me repeat that..
+  - typing: 2s
+    text: So your address is {{address}}, right?  
+
+ifCorrect:
+  - typing: 1s
+    text:
+      - Okay!
+      - Great!
+  - typing: 2s
+    text: "We have a few options available. Which would you prefer?"
+  - typing: 2s
+    text: "1 Hawaiian \n2 Pepperoni\n3 Bacon"
+
+takeOrder:
+  - typing: true
+    text: You've chosen {{order}} as your pizza.   
+
+nameAlreadyProvided:
+  - "Wooops! You've already provided your name, {{name}}"
+
+infoAlreadyProvided:
+  - "Wooops! You've already provided that."
+
+unknown:
+  - typing: true
+    text: 
+      - I don't know what you're talking about...
+      - Try something else.
+      - I'm not quite sure if I understand..
+
+pizzaFlavor:
+  - text: Which do you prefer?
+    quick_replies:
+      - <.B1> Hawaiian #Starting with a '.' before B1 will prepend the name of the bloc in uppercase
+      - <.B2> Pepperoni
+      - <.B3> Bacon      
+
+pizzaFlavorChoice:
+  - You have chosen '{{button}}'
+
+textWithQuickReplies:
+  - text: This is text with Quick Replies
+    quick_replies:
+      - <.B1> Button 1 #Starting with a '.' before B1 will prepend the name of the bloc in uppercase
+      - <.B2> Button 2
+
+textWithQuickReplies_reply:
+  - You pressed button '{{button}}'
