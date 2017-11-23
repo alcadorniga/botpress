@@ -41,6 +41,8 @@ module.exports = function(bp) {
                         convo.set('feeling', 'good')
                         convo.say(txt(replies.accepted()))
                         convo.switchTo('name')
+                            typing: true,
+                            waitRead: true                        
                     }
                 },
                 {
@@ -50,6 +52,8 @@ module.exports = function(bp) {
                         convo.say(txt(replies.sorry()))
                         convo.say(txt('Anyway..'))
                         convo.switchTo('name')
+                            typing: true,
+                            waitRead: true                        
                     }
                 },
                 {
@@ -57,6 +61,8 @@ module.exports = function(bp) {
                     callback: () => {
                         convo.say(txt(replies.unknown()))
                         convo.repeat()
+                            typing: true,
+                            waitRead: true                        
                     }
 
                 }
@@ -96,6 +102,7 @@ module.exports = function(bp) {
 
             convo.createThread('pizza')
             convo.threads['pizza'].addQuestion(txt('We have a few options available'), [{
+                pattern: /choices/i,
                 callback: (response) => {
                     bp.messenger.sendTemplate(event.user.id, {
                         template_type: 'button',
@@ -123,7 +130,6 @@ module.exports = function(bp) {
                         level: 'info',
                         url: '/modules/botpress-hitl'
                     })
-                    //bp.hitl.pause(event.platform, event.user.id)
 
 
                     bp.hear(/HITL_STOP/, (event, next) => {
@@ -133,30 +139,9 @@ module.exports = function(bp) {
 
                     bp.hear({ type: 'message', text: /.+/i }, (event, next) => {
                         bp.messenger.sendText(event.user.id, 'You said: ' + event.text)
-                        //convo.switchTo('topping');
                     })
                 }
             }])
-
-            // bp.hear({
-            //     type: 'postback',
-            //     text: 'Hawaiian'
-            // }, (event, next) => {
-            //     bp.messenger.sendText(event.user.id, 'You chose: Hawaiian', {typing: true})
-            // },
-            // {
-            //     type: 'postback',
-            //     text: 'Pepperoni'
-            // }, (event, next) => {
-            //     bp.messenger.sendText(event.user.id, 'You chose: Pepperoni', {typing: true})
-            // },
-            // {
-            //     type: 'postback',
-            //     text: 'Bacon'
-            // }, (event, next) => {
-            //     bp.messenger.sendText(event.user.id, 'You chose: Bacon', {typing: true})
-            // }
-            // })
 
 
             // convo.createThread('topping')

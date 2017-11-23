@@ -6,9 +6,7 @@ var _ = require("underscore");
  * CsvHelper - the helper for the fast-csv library
  * we will use this to read from and write to the CSV file
  */
-function CsvHelper() {
-    //// empty constructor
-}
+function CsvHelper() {}
 
 /**
  * writeMessage - writes the new message
