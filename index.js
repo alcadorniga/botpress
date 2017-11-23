@@ -7,14 +7,6 @@ module.exports = function(bp) {
 
     bp.middlewares.load()
 
-    // bp.hear({
-    //     type: 'postback',
-    //     text: 'GET_STARTED'
-    // }, (event, next) => {
-    //     const { first_name, last_name } = event.user
-    //     bp.logger.info('New user:', first_name, last_name)
-    // })    
-
     const utterances = {
         start: /hello|hi|hey|holla/i,
         good: /good|great|fine|okay|ok/i,
